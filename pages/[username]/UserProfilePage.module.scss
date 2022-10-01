@@ -1,0 +1,6 @@
+@use "/styles/base";
+
+.container {
+  @include base.flexContainer;
+  flex-direction: column;
+}

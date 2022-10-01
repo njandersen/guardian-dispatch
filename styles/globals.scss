@@ -26,6 +26,17 @@ a {
   }
 }
 
+// Index Page
+.feed-container {
+  margin-top: 8rem;
+  @include base.flexContainer;
+  flex-direction: column;
+  color: base.$secondary-text-color;
+}
+.btn-load-more {
+  @include base.button;
+}
+
 // Enter Page
 .btn-google {
   @include base.button;

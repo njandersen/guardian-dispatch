@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import styles from "./PostFeed.module.scss";
+
 export default function PostFeed({ posts, admin }) {
   return posts
     ? posts.map((post) => (
@@ -14,7 +16,7 @@ function PostItem({ post }) {
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
 
   return (
-    <div>
+    <div className={styles.post}>
       <Link href={`/${post.username}`}>
         <a>
           <strong>By @{post.username}</strong>

@@ -12,6 +12,7 @@ import {
 import PostFeed from "../../components/PostFeed";
 import UserProfile from "../../components/UserProfile";
 import { getUserWithUsername, postToJSON } from "../../lib/firebase";
+import styles from "./UserProfilePage.module.scss";
 
 export async function getServerSideProps({ query: urlQuery }) {
   const { username } = urlQuery;
@@ -40,7 +41,7 @@ export async function getServerSideProps({ query: urlQuery }) {
 
 export default function UserProfilePage({ user, posts }) {
   return (
-    <main>
+    <main className={styles.container}>
       <UserProfile user={user} />
       <PostFeed posts={posts} />
     </main>

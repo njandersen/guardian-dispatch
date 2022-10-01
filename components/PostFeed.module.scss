@@ -1,0 +1,7 @@
+@use "/styles/base";
+
+.post {
+  @include base.card;
+  color: black;
+  width: 60%;
+}
