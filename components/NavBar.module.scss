@@ -1,0 +1,50 @@
+@use "/styles/base";
+
+.navbar {
+  height: 70px;
+  width: 100%;
+  background: base.$columbia-blue;
+  color: base.$cool-black;
+  position: fixed;
+  top: 0;
+  padding: 0 10vw;
+  font-weight: bold;
+  border-bottom: 1px solid base.$light-silver;
+  z-index: 99;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  img {
+    border-radius: 50%;
+  }
+
+  li {
+    border-radius: 50%;
+  }
+}
+
+.feedbtn {
+  @include base.button;
+}
+.feedbtn:hover {
+  filter: brightness(90%);
+}
+
+.writebtn {
+  @include base.button;
+}
+
+.loginbtn {
+  @include base.button;
+}
+.loginbtn:hover {
+  filter: brightness(90%);
+}
