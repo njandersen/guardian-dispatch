@@ -3,13 +3,13 @@
 .navbar {
   height: 70px;
   width: 100%;
-  background: base.$columbia-blue;
-  color: base.$cool-black;
+  background: base.$navbar-color;
   position: fixed;
   top: 0;
   padding: 0 10vw;
   font-weight: bold;
-  border-bottom: 1px solid base.$light-silver;
+  font-family: base.$font-primary;
+  border-bottom: 1px solid base.$accent-color;
   z-index: 99;
 
   ul {

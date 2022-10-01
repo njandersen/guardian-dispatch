@@ -1,6 +1,8 @@
+import styles from "./UserProfile.module.scss";
+
 export default function UserProfile({ user }) {
   return (
-    <div>
+    <div className={styles.userContainer}>
       <img src={user.photoURL} />
       <p>
         <i>@{user.username}</i>

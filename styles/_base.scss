@@ -1,14 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap");
 // Color Palette
-$cool-black: #032a5d;
-$columbia-blue: #ccdaeb;
-$floral-white: #fefbec;
-$light-silver: #dad9d5;
-$chinese-orange: #f97444;
+$background-color: #eeeeee;
+$button-color: #e94560;
+$navbar-color: #16213e;
+$accent-color: #141e61;
+$secondary-text-color: #533483;
+$text-color: black;
+
+// Fonts
+$font-primary: "Open Sans", sans-serif;
+$font-secondary: "Merriweather", serif;
 
 @mixin button {
-  background-color: $chinese-orange;
+  background-color: $button-color;
   border: none;
-  color: black;
+  color: white;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;

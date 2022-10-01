@@ -1,0 +1,16 @@
+@use "/styles/base";
+
+.userContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10rem;
+  color: black;
+  font-family: base.$font-secondary;
+  color: base.$secondary-text-color;
+
+  img {
+    border-radius: 50%;
+  }
+}
