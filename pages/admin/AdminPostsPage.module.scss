@@ -1,0 +1,80 @@
+@use "/styles/base";
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  color: black;
+}
+
+.container section {
+  width: 60vw;
+  margin-right: 1rem;
+}
+
+.container aside {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-width: 250px;
+  min-height: 200px;
+  text-align: center;
+  position: sticky;
+  top: 80px;
+  height: 0;
+}
+
+.formCard {
+  @include base.card;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls textarea {
+  height: 60vh;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  background-color: white;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.adminContainer {
+  @include base.flexContainer;
+  flex-direction: column;
+}
+
+.createForm {
+  margin-top: 2rem;
+  color: black;
+}
+
+.title {
+  outline: none;
+  border: none;
+  font-size: 2.5rem;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: white;
+  color: black;
+}
+
+.btnCreate {
+  @include base.button;
+}
+.btnSave {
+  @include base.button;
+}
+.checkbox {
+  display: inline;
+  width: auto;
+}
