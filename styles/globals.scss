@@ -66,6 +66,10 @@ img {
   filter: brightness(90%);
 }
 
+.btn-signin-anon {
+  @include base.button;
+}
+
 .btn-signout {
   @include base.button;
   background-color: white;
@@ -83,6 +87,16 @@ button[disabled] {
   margin-top: 30rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   color: black;
+  input {
+    border: none;
+    outline: none;
+    background-color: white;
+    color: black;
+  }
+}
+.btn-username {
+  @include base.button;
 }

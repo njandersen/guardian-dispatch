@@ -5,7 +5,6 @@ import { useContext, useState, useEffect, useCallback } from "react";
 import debounce from "lodash.debounce";
 
 import { UserContext } from "../lib/context";
-import { async } from "@firebase/util";
 
 export default function EnterPage(props) {
   const { user, username } = useContext(UserContext);
@@ -30,9 +29,17 @@ export default function EnterPage(props) {
     };
 
     return (
-      <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={"/google.png"} /> Sign In With Google
-      </button>
+      <>
+        <button className="btn-google" onClick={signInWithGoogle}>
+          <img src={"/google.png"} /> Sign In With Google
+        </button>
+        <button
+          className="btn-signin-anon"
+          onClick={() => signInAnonymously(auth)}
+        >
+          Sign In Anonymously
+        </button>
+      </>
     );
   }
 
@@ -65,7 +72,6 @@ export default function EnterPage(props) {
         photoURL: user.photoURL,
         displayName: user.displayName,
       });
-      batch.set(usernameDoc, { uid: user.uid });
       batch.set(usernameDoc, { uid: user.uid });
 
       await batch.commit();
@@ -123,7 +129,7 @@ export default function EnterPage(props) {
               isValid={isValid}
               loading={loading}
             />
-            <button type="submit" className="btn-green" disabled={!isValid}>
+            <button type="submit" className="btn-username" disabled={!isValid}>
               Choose
             </button>
           </form>
