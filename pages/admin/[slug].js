@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { useDocumentData } from "react-firebase-hooks/firestore";
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import toast, { Toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 import {
   getFirestore,
   doc,
@@ -14,7 +14,7 @@ import {
 
 import AuthCheck from "../../components/AuthCheck";
 import { auth } from "../../lib/firebase";
-
+import ImageLoader from "../../components/ImageUploader";
 import styles from "./AdminPostsPage.module.scss";
 
 export default function AdminPostEdit(props) {
@@ -38,7 +38,7 @@ function PostManager() {
     "posts",
     slug
   );
-  const [post] = useDocumentDataOnce(postRef);
+  const [post] = useDocumentData(postRef);
 
   return (
     <main className={styles.container}>
@@ -71,10 +71,12 @@ function PostManager() {
 }
 
 function PostForm({ defaultValues, postRef, preview }) {
-  const { register, handleSubmit, reset, watch } = useForm({
+  const { register, handleSubmit, reset, watch, formState } = useForm({
     defaultValues,
     mode: "onChange",
   });
+
+  const { errors, isDirty, isValid } = formState;
 
   const updatePost = async ({ content, published }) => {
     await updateDoc(postRef, {
@@ -96,22 +98,34 @@ function PostForm({ defaultValues, postRef, preview }) {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
+        <ImageLoader />
+
         <textarea
           name="content"
-          {...register("content", { required: true })}
+          {...register("content", {
+            required: "Content is required",
+            minLength: { value: 10, message: "Content is too short" },
+            maxLength: { value: 20000, message: "Content is too long" },
+          })}
         ></textarea>
 
-        <fieldset>
+        <p className={styles.textDanger}>{errors.content?.message}</p>
+
+        <fieldset className={styles.publishedContainer}>
           <input
             className={styles.checkbox}
             name="published"
             type="checkbox"
-            {...register("published", { required: true })}
+            {...register("published")}
           />
           <label>Published</label>
         </fieldset>
 
-        <button type="submit" className={styles.btnSave}>
+        <button
+          type="submit"
+          className={styles.btnSave}
+          disabled={!isDirty || !isValid}
+        >
           Save Changes
         </button>
       </div>

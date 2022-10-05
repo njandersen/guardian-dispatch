@@ -8,9 +8,12 @@ import {
   doc,
 } from "firebase/firestore";
 import { useDocumentData } from "react-firebase-hooks/firestore";
-
+import AuthCheck from "../../components/AuthCheck";
+import SpicyRamen from "../../components/SpicyRamenButton";
 import PostContent from "../../components/PostContent";
+
 import { getUserWithUsername, postToJSON } from "../../lib/firebase";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -62,6 +65,15 @@ export default function Post(props) {
         <p>
           <strong>{post.spiceyRamenCount || 0} 🥡</strong>
         </p>
+        <AuthCheck
+          fallback={
+            <Link href="/enter">
+              <button>🥡 Sign Up</button>
+            </Link>
+          }
+        >
+          <SpicyRamen postRef={postRef} />
+        </AuthCheck>
       </aside>
     </main>
   );

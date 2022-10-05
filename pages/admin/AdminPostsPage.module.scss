@@ -74,7 +74,18 @@
 .btnSave {
   @include base.button;
 }
+
+.publishedContainer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: none;
+}
 .checkbox {
   display: inline;
   width: auto;
+}
+
+.textDanger {
+  font-weight: bold;
+  color: red;
 }
