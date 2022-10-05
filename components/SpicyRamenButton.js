@@ -3,6 +3,7 @@ import { getFirestore, increment, writeBatch, doc } from "firebase/firestore";
 import { useDocument } from "react-firebase-hooks/firestore";
 
 import { auth } from "../lib/firebase";
+import styles from "./SpicyRamenButton.module.scss";
 
 // Allows user to give the post a spicy ramen(like)
 export default function SpicyRamen({ postRef }) {
@@ -37,8 +38,12 @@ export default function SpicyRamen({ postRef }) {
   };
 
   return ramenDoc?.exists() ? (
-    <button onClick={removeRamen}>Remove Spicy Ramen</button>
+    <button className={styles.btnRemove} onClick={removeRamen}>
+      Remove Spicy Ramen
+    </button>
   ) : (
-    <button onClick={addRamen}>🥡 Spicy Ramen</button>
+    <button className={styles.btnAdd} onClick={addRamen}>
+      🥡 Spicy Ramen
+    </button>
   );
 }

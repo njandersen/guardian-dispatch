@@ -7,7 +7,7 @@ export default function UserProfile({ user }) {
       <p>
         <i>@{user.username}</i>
       </p>
-      <h1>{user.displayName}</h1>
+      <h1>{user.username}</h1>
     </div>
   );
 }

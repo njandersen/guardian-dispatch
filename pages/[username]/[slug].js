@@ -8,12 +8,15 @@ import {
   doc,
 } from "firebase/firestore";
 import { useDocumentData } from "react-firebase-hooks/firestore";
+import Link from "next/link";
+
 import AuthCheck from "../../components/AuthCheck";
 import SpicyRamen from "../../components/SpicyRamenButton";
 import PostContent from "../../components/PostContent";
-
 import { getUserWithUsername, postToJSON } from "../../lib/firebase";
-import Link from "next/link";
+import styles from "./UserProfilePage.module.scss";
+import { useContext } from "react";
+import { UserContext } from "../../lib/context";
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;
@@ -54,26 +57,32 @@ export default function Post(props) {
   const [realtimePost] = useDocumentData(postRef);
 
   const post = realtimePost || props.post;
+  const { user: currentUser } = useContext(UserContext);
 
   return (
-    <main>
+    <main className={styles.container}>
       <section>
         <PostContent post={post} />
       </section>
 
       <aside>
         <p>
-          <strong>{post.spiceyRamenCount || 0} 🥡</strong>
+          <strong>{post.spicyRamenCount || 0} 🥡</strong>
         </p>
         <AuthCheck
           fallback={
             <Link href="/enter">
-              <button>🥡 Sign Up</button>
+              <button className={styles.btnSignUp}>🥡 Sign Up</button>
             </Link>
           }
         >
           <SpicyRamen postRef={postRef} />
         </AuthCheck>
+        {currentUser?.uid === post.uid && (
+          <Link href={`/admin/${post.slug}`}>
+            <button className={styles.btnEdit}>Edit Post</button>
+          </Link>
+        )}
       </aside>
     </main>
   );

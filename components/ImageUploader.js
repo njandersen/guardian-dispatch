@@ -51,7 +51,7 @@ export default function ImageLoader() {
 
       {!uploading && (
         <>
-          <label className="btn">
+          <label className={styles.btnImg}>
             📸 Upload Img
             <input
               type="file"

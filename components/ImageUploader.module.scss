@@ -1,6 +1,12 @@
+@use "/styles/base";
+
 .box {
   display: flex;
   justify-content: space-between;
+
+  input {
+    display: none;
+  }
 }
 
 .uploadSnippet {
@@ -9,4 +15,9 @@
   background: white;
   padding: 5px;
   margin: 5px 0;
+}
+
+.btnImg {
+  @include base.button;
+  background-color: grey;
 }

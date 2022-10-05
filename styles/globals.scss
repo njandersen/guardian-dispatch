@@ -10,6 +10,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 * {
@@ -26,7 +27,19 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 // Index Page
+.welcome {
+  padding: 2rem;
+  margin: 1rem 0;
+  @include base.card;
+  color: white;
+  background-color: base.$secondary-text-color;
+  width: 60%;
+}
 .feed-container {
   margin-top: 8rem;
   @include base.flexContainer;
@@ -58,6 +71,12 @@ a {
   background-color: white;
   color: black;
   margin-top: 20rem;
+}
+
+button:disabled,
+button[disabled] {
+  filter: brightness(80%);
+  cursor: not-allowed;
 }
 
 .username-form {

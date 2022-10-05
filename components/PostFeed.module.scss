@@ -1,7 +1,17 @@
 @use "/styles/base";
 
 .post {
-  @include base.card;
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px gray;
+
   color: black;
   width: 60%;
+}
+
+.pushLeft {
+  margin-left: 30rem;
 }

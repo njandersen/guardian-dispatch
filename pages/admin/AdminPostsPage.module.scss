@@ -75,6 +75,19 @@
   @include base.button;
 }
 
+.btnPreview {
+  @include base.button;
+  background-color: base.$navbar-color;
+}
+.btnLive {
+  @include base.button;
+  background-color: base.$accent-color;
+}
+.btnDelete {
+  @include base.button;
+  background-color: red;
+}
+
 .publishedContainer {
   margin-top: 3rem;
   margin-bottom: 3rem;

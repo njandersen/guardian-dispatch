@@ -1,0 +1,13 @@
+@use "/styles/base";
+
+.btnRemove {
+  @include base.button;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+.btnAdd {
+  @include base.button;
+}

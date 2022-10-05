@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import {
   collectionGroup,
   getDocs,
@@ -17,7 +16,7 @@ import { postToJSON } from "../lib/firebase";
 import Loader from "../components/Loader";
 
 // Max Post to query per page
-const LIMIT = 1;
+const LIMIT = 5;
 
 export async function getServerSideProps(context) {
   const ref = collectionGroup(getFirestore(), "posts");
@@ -71,6 +70,15 @@ export default function Home(props) {
 
   return (
     <main className="feed-container">
+      <div className="welcome">
+        <h2>Welcome to the Guardian Dispatch</h2>
+        <p>
+          This is a social site for the Destiny community to come together and
+          share opinions and guides
+        </p>
+        <p>Sign up for an account and make some posts!</p>
+      </div>
+
       <PostFeed posts={posts} />
 
       {!loading && !postsEnd && (

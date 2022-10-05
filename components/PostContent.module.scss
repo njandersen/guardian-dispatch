@@ -1,0 +1,8 @@
+@use "/styles/base";
+
+.card {
+  @include base.card;
+  color: black;
+  margin-top: 5rem;
+  justify-content: left;
+}
