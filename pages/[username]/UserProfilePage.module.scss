@@ -53,6 +53,7 @@
 .btnEdit {
   @include base.button;
   background-color: base.$accent-color;
+  color: white;
   &:hover {
     filter: brightness(90%);
   }
