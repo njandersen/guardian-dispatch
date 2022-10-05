@@ -10,7 +10,7 @@ export default function SpicyRamen({ postRef }) {
   const ramenRef = doc(
     getFirestore(),
     postRef.path,
-    "spicy ramen",
+    "spicyramen",
     auth.currentUser.uid
   );
   const [ramenDoc] = useDocument(ramenRef);
