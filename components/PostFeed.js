@@ -18,7 +18,7 @@ function PostItem({ post, admin = false }) {
   return (
     <div className={styles.post}>
       <Link href={`/${post.username}`}>
-        <a>
+        <a className={styles.username}>
           <strong>By @{post.username}</strong>
         </a>
       </Link>
@@ -40,14 +40,14 @@ function PostItem({ post, admin = false }) {
         <>
           <Link href={`/admin/${post.slug}`}>
             <h3>
-              <button className="btn-blue">Edit</button>
+              <button className={styles.btnEdit}>Edit</button>
             </h3>
           </Link>
 
           {post.published ? (
-            <p className="text-success">Live</p>
+            <p className={styles.live}>Live</p>
           ) : (
-            <p className="text-danger">Unpublished</p>
+            <p className={styles.unpublished}>Unpublished</p>
           )}
         </>
       )}

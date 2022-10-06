@@ -10,8 +10,47 @@
 
   color: black;
   width: 60%;
+
+  a {
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+
+  h2 {
+    color: base.$navbar-color;
+    &:hover {
+      color: base.$background-color;
+    }
+  }
 }
 
 .pushLeft {
   margin-left: 30rem;
+}
+
+.username {
+  color: base.$button-color;
+}
+
+.btnEdit {
+  @include base.button;
+  color: white;
+  background-color: base.$accent-color;
+  &:hover {
+    background-color: white;
+    border: 2px solid base.$accent-color;
+    border-radius: 8px;
+    color: base.$accent-color;
+  }
+}
+
+.live {
+  font-weight: bold;
+  color: greenyellow;
+}
+
+.unpublished {
+  font-weight: bold;
+  color: red;
 }

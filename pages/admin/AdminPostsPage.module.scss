@@ -73,15 +73,35 @@
 }
 .btnSave {
   @include base.button;
+  &:hover {
+    background-color: base.$background-color;
+    border: 2px solid base.$button-color;
+    border-radius: 8px;
+    color: base.$button-color;
+  }
 }
 
 .btnPreview {
   @include base.button;
   background-color: base.$navbar-color;
+  color: white;
+  &:hover {
+    background-color: base.$background-color;
+    border: 2px solid base.$navbar-color;
+    border-radius: 8px;
+    color: base.$navbar-color;
+  }
 }
 .btnLive {
   @include base.button;
   background-color: base.$accent-color;
+  color: white;
+  &:hover {
+    background-color: base.$background-color;
+    border: 2px solid base.$navbar-color;
+    border-radius: 8px;
+    color: base.$navbar-color;
+  }
 }
 .btnDelete {
   @include base.button;

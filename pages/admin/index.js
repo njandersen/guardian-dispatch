@@ -94,7 +94,7 @@ function CreateNewPost() {
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="My Awesome Article!"
+        placeholder="A New Communication"
         className={styles.title}
       />
       <p>

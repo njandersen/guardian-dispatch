@@ -36,24 +36,44 @@
 
 .feedbtn {
   @include base.button;
-}
-.feedbtn:hover {
-  filter: brightness(90%);
+  &:hover {
+    background-color: base.$navbar-color;
+    border: 2px solid base.$button-color;
+    border-radius: 8px;
+    color: base.$button-color;
+  }
 }
 
 .writebtn {
   @include base.button;
+  &:hover {
+    background-color: base.$navbar-color;
+    border: 2px solid base.$button-color;
+    border-radius: 8px;
+    color: base.$button-color;
+  }
 }
 
 .loginbtn {
   @include base.button;
-}
-.loginbtn:hover {
-  filter: brightness(90%);
+  &:hover {
+    background-color: base.$navbar-color;
+    border: 2px solid base.$button-color;
+    border-radius: 8px;
+    color: base.$button-color;
+  }
 }
 
 .btnSignOut {
   @include base.button;
+  background-color: base.$navbar-color;
+  border: 2px solid base.$button-color;
+  border-radius: 8px;
+  color: base.$button-color;
+  &:hover {
+    background-color: base.$button-color;
+    color: base.$text-color;
+  }
 }
 
 .pushLeft {
