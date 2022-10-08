@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 import { updateDoc, serverTimestamp } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 import ImageLoader from "../Util/ImageUploader";
 import styles from "./PostForm.module.scss";
