@@ -14,8 +14,8 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import kebabCase from "lodash.kebabcase";
 import toast from "react-hot-toast";
 
-import AuthCheck from "../../components/AuthCheck";
-import PostFeed from "../../components/PostFeed";
+import AuthCheck from "../../components/Util/AuthCheck";
+import PostFeed from "../../components/Posts/PostFeed";
 import { firestore, auth } from "../../lib/firebase";
 import { UserContext } from "../../lib/context";
 import styles from "./AdminPostsPage.module.scss";

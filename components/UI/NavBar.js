@@ -3,8 +3,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 
-import { auth } from "../lib/firebase";
-import { UserContext } from "../lib/context";
+import { auth } from "../../lib/firebase";
+import { UserContext } from "../../lib/context";
 import styles from "./NavBar.module.scss";
 
 export default function NavBar() {

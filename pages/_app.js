@@ -2,7 +2,7 @@ import { Toaster } from "react-hot-toast";
 
 import { useUserData } from "../lib/hooks";
 import { UserContext } from "../lib/context";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/UI/NavBar";
 import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {

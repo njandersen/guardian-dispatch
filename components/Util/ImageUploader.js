@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-import { auth, storage, STATE_CHANGED } from "../lib/firebase";
+import { auth, storage, STATE_CHANGED } from "../../lib/firebase";
 import Loader from "./Loader";
 import styles from "./ImageUploader.module.scss";
 

@@ -11,9 +11,9 @@ import {
 } from "firebase/firestore";
 import { useState } from "react";
 
-import PostFeed from "../components/PostFeed";
+import PostFeed from "../components/Posts/PostFeed";
 import { postToJSON } from "../lib/firebase";
-import Loader from "../components/Loader";
+import Loader from "../components/Util/Loader";
 
 // Max Post to query per page
 const LIMIT = 5;

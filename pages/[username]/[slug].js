@@ -10,9 +10,9 @@ import {
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import Link from "next/link";
 
-import AuthCheck from "../../components/AuthCheck";
-import SpicyRamen from "../../components/SpicyRamenButton";
-import PostContent from "../../components/PostContent";
+import AuthCheck from "../../components/Util/AuthCheck";
+import SpicyRamen from "../../components/UI/SpicyRamenButton";
+import PostContent from "../../components/Posts/PostContent";
 import { getUserWithUsername, postToJSON } from "../../lib/firebase";
 import styles from "./UserProfilePage.module.scss";
 import { useContext } from "react";

@@ -1,4 +1,3 @@
-import { async } from "@firebase/util";
 import {
   query,
   collection,
@@ -9,8 +8,8 @@ import {
   getFirestore,
 } from "firebase/firestore";
 
-import PostFeed from "../../components/PostFeed";
-import UserProfile from "../../components/UserProfile";
+import PostFeed from "../../components/Posts/PostFeed";
+import UserProfile from "../../components/Users/UserProfile";
 import { getUserWithUsername, postToJSON } from "../../lib/firebase";
 import styles from "./UserProfilePage.module.scss";
 

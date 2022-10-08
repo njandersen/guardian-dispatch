@@ -13,9 +13,9 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 
-import AuthCheck from "../../components/AuthCheck";
+import AuthCheck from "../../components/Util/AuthCheck";
 import { auth } from "../../lib/firebase";
-import ImageLoader from "../../components/ImageUploader";
+import ImageLoader from "../../components/Util/ImageUploader";
 import styles from "./AdminPostsPage.module.scss";
 
 export default function AdminPostEdit(props) {

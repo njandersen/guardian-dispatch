@@ -1,8 +1,7 @@
-import { async } from "@firebase/util";
 import { getFirestore, increment, writeBatch, doc } from "firebase/firestore";
 import { useDocument } from "react-firebase-hooks/firestore";
 
-import { auth } from "../lib/firebase";
+import { auth } from "../../lib/firebase";
 import styles from "./SpicyRamenButton.module.scss";
 
 // Allows user to give the post a spicy ramen(like)
