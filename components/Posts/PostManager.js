@@ -1,3 +1,12 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { doc, getFirestore } from "firebase/firestore";
+import { useDocumentData } from "react-firebase-hooks/firestore";
+import Link from "next/link";
+
+import { auth } from "../../lib/firebase";
+import PostForm from "./PostForm";
+import DeletePostButton from "../UI/DeleteButton";
 import styles from "./PostManager.module.scss";
 
 function PostManager() {
@@ -48,3 +57,5 @@ function PostManager() {
     </main>
   );
 }
+
+export default PostManager;

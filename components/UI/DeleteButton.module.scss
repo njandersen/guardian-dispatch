@@ -1,0 +1,6 @@
+@use "/styles/base";
+
+.btnDelete {
+  @include base.button;
+  background-color: red;
+}

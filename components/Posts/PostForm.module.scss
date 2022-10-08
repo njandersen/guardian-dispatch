@@ -1,0 +1,48 @@
+@use "/styles/base";
+
+.formCard {
+  @include base.card;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  textarea {
+    height: 60vh;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    background-color: white;
+    color: black;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.publishedContainer {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border: none;
+}
+.checkbox {
+  display: inline;
+  width: auto;
+}
+
+.textDanger {
+  font-weight: bold;
+  color: red;
+}
+
+.btnSave {
+  @include base.button;
+  &:hover {
+    background-color: base.$background-color;
+    border: 2px solid base.$button-color;
+    border-radius: 8px;
+    color: base.$button-color;
+  }
+}
